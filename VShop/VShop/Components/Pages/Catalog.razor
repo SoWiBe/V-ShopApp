@@ -1,0 +1,41 @@
+﻿@page "/Catalog"
+@using Common
+@using VShop.Components.Cards
+<h2>Catalog</h2>
+<div class="product-catalog">
+    @foreach (var product in Products)
+    {
+        <ProductCard Product="product" OnAddToCart="AddToCart"/>
+    }
+</div>
+
+@code {
+
+    private List<Product> Products = new List<Product>
+    {
+        new Product
+        {
+            Id = Guid.NewGuid(),
+            Title = "T-shirt",
+            Description = "Test",
+            Price = 50m,
+            ImageUrl = ""
+        },
+        
+        new Product
+        {
+            Id = Guid.NewGuid(),
+            Title = "T-shirt2",
+            Description = "Test",
+            Price = 50m,
+            ImageUrl = ""
+        }
+    };
+
+    private void AddToCart(Product product)
+    {
+        //some logic
+    }
+
+}
+}
