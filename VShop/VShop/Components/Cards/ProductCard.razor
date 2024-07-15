@@ -1,0 +1,19 @@
+﻿@using Common
+
+<div class="product-card">
+    <img src="@Product.ImageUrl" alt="@Product.Title" class="product-image"/>
+    <h3>@Product.Title</h3>
+    <p>@Product.Description</p>
+    <p>@Product.Price.ToString("c")</p>
+    <button @onclick="AddToCart">Add to Cart</button>
+</div>
+
+@code {
+    [Parameter] public Product Product { get; set; }
+    [Parameter] public EventCallback<Product> OnAddToCart { get; set; }
+
+    private async Task AddToCart()
+    {
+        await OnAddToCart.InvokeAsync(Product);
+    }
+}
