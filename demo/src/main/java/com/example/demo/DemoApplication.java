@@ -42,6 +42,4 @@ public class DemoApplication {
 
 		return stringBuilder.toString();
 	}
-
-
 }
