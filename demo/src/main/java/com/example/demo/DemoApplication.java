@@ -43,10 +43,5 @@ public class DemoApplication {
 		return stringBuilder.toString();
 	}
 
-	@GetMapping("/products")
-	public List<Product> products(){
-		return List.of(
-				new Product(1L, "Test", 350)
-		);
-	}
+
 }
