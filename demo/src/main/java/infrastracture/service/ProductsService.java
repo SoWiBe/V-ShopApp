@@ -1,6 +1,7 @@
-package com.example.demo.product;
+package infrastracture.service;
 
-import com.example.demo.abstractions.IProductsService;
+import infrastracture.abstractions.IProductsService;
+import infrastracture.models.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
