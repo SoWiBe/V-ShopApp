@@ -1,6 +1,6 @@
-package com.example.demo.abstractions;
+package infrastracture.abstractions;
 
-import com.example.demo.product.Product;
+import infrastracture.models.Product;
 
 import java.util.List;
 
