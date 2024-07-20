@@ -10,8 +10,15 @@ import java.util.List;
 
 @Service
 public class ProductsService implements IProductsService {
+
     @Autowired
     private ProductRepository productRepository;
+
+
+    public Product createProduct(Product product){
+        return product;
+    }
+
 
     public List<Product> getProducts(){
         return List.of(

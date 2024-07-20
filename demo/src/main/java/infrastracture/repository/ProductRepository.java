@@ -1,4 +1,7 @@
 package infrastracture.repository;
 
-public class ProductRepository {
+import infrastracture.models.Product;
+
+public class ProductRepository{
+
 }
