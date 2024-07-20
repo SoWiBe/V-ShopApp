@@ -1,4 +1,4 @@
 package infrastracture.repository;
 
-public class UserRepository {
+public class ProductRepository {
 }
