@@ -1,7 +1,12 @@
 package infrastracture.models;
 
+import jakarta.persistence.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Products")
 public class Product {
-    private Long id;
+    @Id
+    private String id;
     private String title;
     private double price;
 
@@ -9,7 +14,7 @@ public class Product {
 
     }
 
-    public Product(Long id, String title, double price) {
+    public Product(String id, String title, double price) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -20,11 +25,11 @@ public class Product {
         this.price = price;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
