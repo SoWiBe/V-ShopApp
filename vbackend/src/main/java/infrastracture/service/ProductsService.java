@@ -15,27 +15,32 @@ public class ProductsService implements IProductsService {
     private final ProductRepository productRepository;
 
     @Autowired
-    public ProductsService(ProductRepository productRepository){
-        this.productRepository = productRepository;
+    public ProductsService(ProductRepository productRepository1){
+        this.productRepository = productRepository1;
     }
 
-    public Product createProduct(Product product){
+    @Override
+    public Product createProduct(Product product) {
         return productRepository.save(product);
     }
 
-    public Optional<Product> getProductById(String id){
+    @Override
+    public List<Product> getProducts() {
+        return productRepository.findAll();
+    }
+
+    @Override
+    public Product updateProduct(Product product) {
+        return productRepository.save(product);
+    }
+
+    @Override
+    public Optional<Product> getProductById(String id) {
         return productRepository.findById(id);
     }
 
-    public Product updateProduct(Product product){
-        return productRepository.save(product);
-    }
-
-    public void deleteProduct(String id){
+    @Override
+    public void deleteProduct(String id) {
         productRepository.deleteById(id);
-    }
-
-    public List<Product> getProducts(){
-        return productRepository.findAll();
     }
 }

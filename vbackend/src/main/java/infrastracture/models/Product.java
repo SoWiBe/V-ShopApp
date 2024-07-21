@@ -10,9 +10,7 @@ public class Product {
     private String title;
     private double price;
 
-    public Product(){
-
-    }
+    public Product(){}
 
     public Product(String id, String title, double price) {
         this.id = id;
@@ -47,14 +45,5 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", price=" + price +
-                '}';
     }
 }
