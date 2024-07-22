@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Common\Common.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="8.0.0" />
+    </ItemGroup>
+
 </Project>
