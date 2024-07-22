@@ -1,8 +1,7 @@
 package com.example.vbackend.product;
 
-import infrastracture.models.Product;
-import infrastracture.repository.ProductRepository;
-import infrastracture.service.ProductsService;
+import com.example.vbackend.infrastructure.models.Product;
+import com.example.vbackend.infrastructure.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
-package infrastracture.abstractions;
+package com.example.vbackend.infrastructure.abstractions;
 
-import infrastracture.models.Product;
+import com.example.vbackend.infrastructure.models.Product;
 
 import java.util.List;
 import java.util.Optional;

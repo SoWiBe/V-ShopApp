@@ -1,8 +1,7 @@
-package infrastracture.service;
+package com.example.vbackend.infrastructure.service;
 
-import infrastracture.abstractions.IProductsService;
-import infrastracture.models.Product;
-import infrastracture.repository.ProductRepository;
+import com.example.vbackend.infrastructure.repository.ProductRepository;
+import com.example.vbackend.infrastructure.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
