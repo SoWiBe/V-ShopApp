@@ -4,5 +4,5 @@ namespace VShop.Infrastructure.Abstractions.Services;
 
 public interface IProductsService
 {
-    IEnumerable<Product> GetProducts();
+    Task<IEnumerable<Product> > GetProducts();
 }
