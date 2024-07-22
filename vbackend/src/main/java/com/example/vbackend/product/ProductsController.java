@@ -2,6 +2,7 @@ package com.example.vbackend.product;
 
 import com.example.vbackend.infrastructure.models.Product;
 import com.example.vbackend.infrastructure.repository.ProductRepository;
+import com.example.vbackend.infrastructure.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,11 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class ProductsController {
 
     @Autowired
-    private ProductRepository productRepository;
+    private ProductsService productsService;
 
     @PostMapping
     public Product createProduct(@RequestBody Product product){
-        return productRepository.save(product);
+        return productsService.createProduct(product);
     }
 
 //    @GetMapping("/{id}")
