@@ -1,9 +1,11 @@
-﻿namespace Common;
+﻿using System.Text.Json.Serialization;
+
+namespace Common;
 
 public class Product
 {
-    public string Id { get; set; }
-    public string Title { get; set; }
-    public decimal Price { get; set; }
-    public string? ImageUrl { get; set; }
+    [JsonPropertyName("id")] public string Id { get; set; }
+    [JsonPropertyName("title")] public string Title { get; set; }
+    [JsonPropertyName("price")] public decimal Price { get; set; }
+    [JsonPropertyName("image")] public string? ImageUrl { get; set; }
 }
