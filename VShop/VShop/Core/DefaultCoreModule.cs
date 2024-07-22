@@ -12,6 +12,8 @@ public class DefaultCoreModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
+        
+        
         builder.RegisterType<ProductsService>().As<IProductsService>();
         
         builder.RegisterType<ApiRepository>().As<IApiRepository>();

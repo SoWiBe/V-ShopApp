@@ -1,31 +1,19 @@
 ﻿@page "/Catalog"
 @using Common
 @using VShop.Components.Cards
+@using VShop.Infrastructure.Abstractions.Services
+
 <h2>Catalog</h2>
 <div class="product-catalog">
     @foreach (var product in Products)
     {
-        <ProductCard Product="product" OnAddToCart="AddToCart"/>
+        <ProductCard Product="product"/>
     }
 </div>
 
-@code {
+@code
+{
+    [Inject] private IProductsService ProductsService { get; set; }
 
-    private List<Product> Products = new List<Product>
-    {
-        new Product
-        {
-            Id = "test",
-            Title = "T-shirt",
-            Price = 50m,
-            ImageUrl = ""
-        },
-    };
-
-    private void AddToCart(Product product)
-    {
-        //some logic
-    }
-
-}
+    private IEnumerable<Product> Products => ProductsService.GetProducts().Result.Value.Products;
 }
