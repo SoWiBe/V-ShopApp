@@ -1,10 +1,11 @@
 using Autofac;
 using Autofac.Core;
+using Autofac.Extensions.DependencyInjection;
 using VShop.Components;
 using VShop.Core;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
     containerBuilder.RegisterModule(new DefaultCoreModule());
