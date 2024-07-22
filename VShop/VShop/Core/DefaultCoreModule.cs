@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Common.Abstractions.Repositories;
+using Common.Extensions;
 using Common.Repositories;
 using VShop.Infrastructure.Abstractions.Repositories;
 using VShop.Infrastructure.Abstractions.Services;
@@ -12,11 +13,12 @@ public class DefaultCoreModule : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
-        
-        
+        builder.AddHttpClientFactory();
+
         builder.RegisterType<ProductsService>().As<IProductsService>();
         
         builder.RegisterType<ApiRepository>().As<IApiRepository>();
+        builder.RegisterType<JsonRepository>().As<IJsonRepository>();
         builder.RegisterType<ConfigurationRepository>().As<IConfigurationRepository>();
     }
 }

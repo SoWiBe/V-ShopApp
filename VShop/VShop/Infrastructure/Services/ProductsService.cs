@@ -18,10 +18,10 @@ public class ProductsService : IProductsService
         _configurationRepository = configurationRepository;
     }
 
-    public async Task<ErrorOr<GetProductsResponse>> GetProducts()
+    public async Task<ErrorOr<IEnumerable<Product>>> GetProducts()
     {
         var url = _configurationRepository.ApiUrl + "/api/v1/product";
-        var response = await _apiRepository.GetResponseAsync<GetProductsResponse>(url);
+        var response = await _apiRepository.GetResponseAsync<IEnumerable<Product>>(url);
         
         return response;
     }

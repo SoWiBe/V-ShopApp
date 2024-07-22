@@ -6,5 +6,5 @@ namespace VShop.Infrastructure.Abstractions.Services;
 
 public interface IProductsService
 {
-    Task<ErrorOr<GetProductsResponse>> GetProducts();
+    Task<ErrorOr<IEnumerable<Product>>> GetProducts();
 }

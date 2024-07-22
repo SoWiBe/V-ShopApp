@@ -22,6 +22,6 @@ public class CatalogViewModel : ICatalogViewModel
     private async Task<IEnumerable<Product>> GetProducts()
     {
         var response = await _productsService.GetProducts();
-        return response.Value.Products;
+        return response.Value;
     }
 }
