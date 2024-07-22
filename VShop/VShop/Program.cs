@@ -1,7 +1,14 @@
+using Autofac;
+using Autofac.Core;
 using VShop.Components;
+using VShop.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
+{
+    containerBuilder.RegisterModule(new DefaultCoreModule());
+});
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
@@ -25,3 +32,4 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.Run();
+
