@@ -1,6 +1,6 @@
-package infrastracture.repository;
+package com.example.vbackend.infrastructure.repository;
 
-import infrastracture.models.Product;
+import com.example.vbackend.infrastructure.models.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

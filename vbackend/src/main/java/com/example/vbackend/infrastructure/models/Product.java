@@ -1,4 +1,4 @@
-package infrastracture.models;
+package com.example.vbackend.infrastructure.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
