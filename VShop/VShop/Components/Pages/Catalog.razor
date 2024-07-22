@@ -1,31 +1,47 @@
 ﻿@page "/Catalog"
 @using Common
 @using VShop.Components.Cards
+@using VShop.Infrastructure.Abstractions.Services
+
 <h2>Catalog</h2>
 <div class="product-catalog">
-    @foreach (var product in Products)
+    @if (_getProductsError || _products is null)
     {
-        <ProductCard Product="product" OnAddToCart="AddToCart"/>
+        <p>Some error ^(</p>
+    }
+    else
+    {
+        @foreach (var product in _products)
+        {
+            <ProductCard Product="product"/>
+        }
     }
 </div>
 
-@code {
+@code
+{
+    [Inject] private IProductsService _productsService { get; set; }
+    private IEnumerable<Product>? _products;
+    private bool _getProductsError;
+    private bool _shouldRender;
 
-    private List<Product> Products = new List<Product>
-    {
-        new Product
-        {
-            Id = "test",
-            Title = "T-shirt",
-            Price = 50m,
-            ImageUrl = ""
-        },
-    };
+    protected override bool ShouldRender() => _shouldRender;
+    
 
-    private void AddToCart(Product product)
+    protected override async Task OnInitializedAsync()
     {
-        //some logic
+        await GetProducts();
     }
 
-}
+    private async Task GetProducts()
+    {
+        var response = await _productsService.GetProducts();
+        if (response.IsError) return;
+        
+        _products = response.Value;
+
+        _shouldRender = true;
+    }
+    
+    
 }

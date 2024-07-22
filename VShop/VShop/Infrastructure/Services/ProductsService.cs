@@ -1,12 +1,30 @@
 ﻿using Common;
+using Common.Abstractions.Repositories;
+using Common.Endpoints.Responses.Products;
+using Common.Errors;
+using VShop.Infrastructure.Abstractions.Repositories;
 using VShop.Infrastructure.Abstractions.Services;
 
 namespace VShop.Infrastructure.Services;
 
 public class ProductsService : IProductsService
 {
-    public IEnumerable<Product> GetProducts()
+    private readonly IApiRepository _apiRepository;
+    private readonly IConfigurationRepository _configurationRepository;
+
+    public ProductsService(IApiRepository apiRepository, IConfigurationRepository configurationRepository)
     {
-        return new List<Product>();
+        _apiRepository = apiRepository;
+        _configurationRepository = configurationRepository;
     }
+
+    public async Task<ErrorOr<IEnumerable<Product>>> GetProducts()
+    {
+        var url = _configurationRepository.ApiUrl + "/api/v1/product";
+        var response = await _apiRepository.GetResponseAsync<IEnumerable<Product>>(url);
+        
+        return response;
+    }
+    
+    
 }

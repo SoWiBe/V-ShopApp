@@ -1,7 +1,7 @@
 ﻿@using Common
 
 <div class="product-card">
-    <img src="@Product.ImageUrl" alt="@Product.Title" class="product-image"/>
+    <img  alt="@Product.Title" class="product-image"/>
     <h3>@Product.Title</h3>
     <p>@Product.Price.ToString("c")</p>
     <button @onclick="AddToCart">Add to Cart</button>
