@@ -1,13 +1,13 @@
 .product-catalog {
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
+    background-color: black;
     justify-content: space-around;
     gap: 20px;
 }
 
 .product-card {
-    background-color: #fff;
+    background-color: #000;
     border: 1px solid #ddd;
     border-radius: 4px;
     margin: auto;

@@ -1,10 +1,10 @@
 ﻿@using Common
 
 <div class="product-card">
-    <img  alt="@Product.Title" class="product-image"/>
+    <img alt="@Product.Title" class="product-image"/>
     <h3>@Product.Title</h3>
     <p>@Product.Price.ToString("c")</p>
-    <button @onclick="AddToCart">Add to Cart</button>
+    <button background-color="#000" @onclick="AddToCart">Add to Cart</button>
 </div>
 
 @code {
