@@ -1,9 +1,10 @@
 ﻿@using Common
+<StyleSheet Resource="VShop/Styles/main.css" Assembly="GetType().Assembly"/>
 
 <div class="product-card">
     <img alt="@Product.Title" class="product-image"/>
-    <h3>@Product.Title</h3>
-    <p>@Product.Price.ToString("c")</p>
+    <h3 >@Product.Title</h3>
+    <p >@Product.Price.ToString("c")</p>
     <button background-color="#000" @onclick="AddToCart">Add to Cart</button>
 </div>
 

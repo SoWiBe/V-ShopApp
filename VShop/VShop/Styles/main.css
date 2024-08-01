@@ -6,7 +6,7 @@
     gap: 20px;
 }
 
-.product-card {
+.product-card::deep {
     background-color: #000;
     border: 1px solid #ddd;
     border-radius: 4px;
